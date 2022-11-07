@@ -59,10 +59,6 @@ h3 {
   margin-left: auto;
 }
 
-.flex-container {
-  display: flex;
-}
-
 .section {
   padding-top: 94px;
   padding-bottom: 94px;
@@ -75,7 +71,12 @@ h3 {
 /* 
 Для header */
 
-.nav.flex-container {
+.header-general {
+  display: flex;
+}
+
+.header-nav {
+  display: flex;
   align-items: center;
 }
 
@@ -95,20 +96,21 @@ h3 {
 .header-contacts {
   margin-left: auto;
 }
-.header-nav,
+.header-nav-menu,
 .header-contacts {
   display: flex;
+  gap: 50px;
 
   font-weight: 500;
   line-height: 1.43;
   letter-spacing: 0.02em;
 }
 
-.header-nav-item:not(:last-child) {
-  margin-right: 50px;
+.header-nav-item {
+  flex-basis: calc((100% - 100) / 3);
 }
-.header-contacts-item:not(:last-child) {
-  margin-right: 50px;
+.header-contacts {
+  flex-basis: calc((100% - 50) / 2);
 }
 .header-nav-item .link,
 .header-contacts .link {
@@ -125,11 +127,13 @@ h3 {
   color: var(--hover-blue-color);
 }
 
-.header-nav .link:hover,
-.header-nav .link:focus,
+.header-nav-menu .link:hover,
+.header-nav-menu .link:focus,
 .header-contacts .link:hover,
 .header-contacts .link:focus {
   color: var(--hover-blue-color);
+
+  outline: none;
 }
 
 /* Нижня межа шапки */
@@ -139,13 +143,17 @@ h3 {
 
 /* Для героя */
 
-.section.hero {
+.hero {
   padding-top: 200px;
   padding-bottom: 200px;
 
-  background-color: var(--footer-bcg);
   color: var(--secondary-color);
-
+  background-color: var(--footer-bcg);
+  background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+    url(../images/hero.jpg);
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: 1600px;
   text-align: center;
 }
 
@@ -185,6 +193,8 @@ h3 {
 .hero .button:focus {
   background-color: var(--button-hover-color);
   color: var(--secondary-color);
+
+  outline: none;
 }
 
 /* Заховані заголовки */
@@ -222,7 +232,8 @@ h3 {
   line-height: 1.71;
 }
 
-.features .list {
+.features-list {
+  display: flex;
   gap: 30px;
 }
 
@@ -244,8 +255,9 @@ h3 {
   text-align: center;
 }
 
-.work .list,
-.team .list {
+.work-list,
+.team-list {
+  display: flex;
   gap: 30px;
 }
 
@@ -264,6 +276,8 @@ h3 {
   border-bottom-left-radius: 4px;
   border-bottom-right-radius: 4px;
   background-color: var(--secondary-color);
+  box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 1px 3px rgba(0, 0, 0, 0.12);
 }
 
 .team-item .card {
@@ -290,13 +304,15 @@ h3 {
 
 /* Для фільтра портфоліо*/
 
-.portfolio-filter.flex-container {
+.portfolio-filter {
+  gap: 8px;
+  display: flex;
   justify-content: center;
   margin-bottom: 50px;
 }
 
-.portfolio-filter .filter-item:not(:last-child) {
-  margin-right: 8px;
+.filter-item {
+  flex-basis: calc((100% - 32) / 5);
 }
 .portfolio-filter .button {
   padding: 6px 22px;
@@ -320,6 +336,11 @@ h3 {
 .portfolio-filter .button:focus {
   background-color: var(--hover-blue-color);
   color: var(--secondary-color);
+
+  outline: none;
+
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.12), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 3px 1px rgba(0, 0, 0, 0.1);
 }
 
 .portfolio-filter .button.current {
@@ -327,17 +348,27 @@ h3 {
 
   background-color: var(--hover-blue-color);
   color: var(--secondary-color);
+
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.12), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 3px 1px rgba(0, 0, 0, 0.1);
 }
 
 /* Секція портфоліо */
 
-.portfolio .cards-list {
+.cards-list {
+  display: flex;
   flex-wrap: wrap;
   gap: 30px;
 }
 
 .portfolio-item {
   flex-basis: calc((100% - 60px) / 3);
+}
+
+.portfolio-item:hover {
+  display: block;
+  box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.16), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    0px 1px 1px rgba(0, 0, 0, 0.12);
 }
 
 .portfolio-card-footer {
@@ -389,6 +420,8 @@ footer */
 .footer .link:hover,
 .footer .link:focus {
   color: var(--hover-blue-color);
+
+  outline: none;
 }
 
 .footer .list {

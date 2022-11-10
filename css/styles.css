@@ -103,21 +103,29 @@ h3 {
 .header-contacts {
   margin-left: auto;
 }
+
 .header-nav-menu,
 .header-contacts {
   display: flex;
-  gap: 50px;
 
   font-weight: 500;
   line-height: 1.43;
   letter-spacing: 0.02em;
 }
 
-.header-nav-item {
-  flex-basis: calc((100% - 100) / 3);
+.header-nav-menu {
+  gap: 50px;
 }
+
 .header-contacts {
-  flex-basis: calc((100% - 50) / 2);
+  gap: 30px;
+}
+
+.header-nav-item {
+  flex-basis: calc((100% - 100px) / 3);
+}
+.header-contacts-item {
+  flex-basis: calc((100% - 30px) / 2);
 }
 .header-nav-item .link,
 .header-contacts .link {
@@ -427,10 +435,7 @@ h3 {
   margin-bottom: 50px;
 }
 
-.filter-item {
-  flex-basis: calc((100% - 32) / 5);
-}
-.portfolio-filter .button {
+.filter-button {
   padding: 6px 22px;
 
   color: var(--header-color);
@@ -448,8 +453,8 @@ h3 {
   border: none;
 }
 
-.portfolio-filter .button:hover,
-.portfolio-filter .button:focus {
+.filter-button:hover,
+.filter-button:focus {
   background-color: var(--hover-blue-color);
   color: var(--secondary-color);
 
@@ -459,7 +464,7 @@ h3 {
     0px 3px 1px rgba(0, 0, 0, 0.1);
 }
 
-.portfolio-filter .button.current {
+.filter-button.current {
   padding: 6px 25px;
 
   background-color: var(--hover-blue-color);
